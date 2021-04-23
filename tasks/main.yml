@@ -1,0 +1,20 @@
+---
+
+- name: "Main | Ensure pasteque jsadmin directory exists"
+  file:
+    path: "{{ pasteque_jsadmin_dir }}"
+    state: directory
+    mode: 0755
+  register: _reg_pasteque_jsadmin_dir
+  notify: _handler_update_files_ownership
+
+- name: "Main | Clone or Update the repo"
+  git:
+    repo: "{{ pasteque_jsadmin_git_repo }}"
+    version: master
+    dest: "{{ pasteque_jsadmin_dir }}"
+    clone: true
+    update: true
+    accept_hostkey: true
+  register: _reg_pasteque_jsadmin_repo
+  notify: _handler_update_files_ownership

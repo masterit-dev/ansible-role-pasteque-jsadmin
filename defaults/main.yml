@@ -1,0 +1,7 @@
+---
+
+domain: example.com
+
+pasteque_jsadmin_dir: "/var/www/pasteque_jsadmin"
+pasteque_jsadmin_url: "admin.pasteque.{{ domain }}"
+pasteque_jsadmin_git_repo: "https://framagit.org/pasteque/pasteque-jsadmin.git"
