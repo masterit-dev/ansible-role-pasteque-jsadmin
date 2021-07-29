@@ -6,6 +6,6 @@
     path: "{{ pasteque_jsadmin_dir }}"
     state: directory
     recurse: yes
-    owner: root
     group: www-data
+    mode: u=rwX,g=rwX,o=rX
   become: yes
